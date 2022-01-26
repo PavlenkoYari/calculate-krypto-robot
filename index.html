@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/tools.min.css">
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body>
+<header class="header">
+    <div class="header__logo">
+        Krypton robot
+    </div>
+    <div class="header__navigation">
+        <a class="header__navigation_nav" target="_blank"
+           href="https://www.binance.com/en/trade/WAXP_USDT?layout=basic" id="wax_price"></a>
+        <a class="header__navigation_nav" target="_blank"
+           href="https://wax.alcor.exchange/trade/cube-cubepowcoins_wax-eosio.token" id="cube_price"></a>
+        <a class="header__navigation_nav" target="_blank"
+           href="https://wax.alcor.exchange/trade/krypton-kryptoncoins_wax-eosio.token" id="krypton_price"></a>
+        <p class="header__navigation_nav" id="mining_per_hour"></p>
+    </div>
+</header>
+<main>
+    <div class="infoWallet">
+        Keep calm and шf you want me to smile: <span>xhqlc.c.wam</span>
+    </div>
+    <div class="formWrapper">
+        <div class="formWrapper__title">
+            Income and expense calculator
+        </div>
+        <div class="calculator">
+            <div class="calculator__form calculator">
+                <div class="form">
+                    <div class="calculator__form_title">
+                        Miners
+                    </div>
+                    <div class="calculator__form_block">
+                        <div class="form__group">
+                            <div class="form__group_label">
+                                Gold miner:
+                            </div>
+                            <input type="text" placeholder="Gold counts" name="gold" pattern="[0-9]+"
+                                   class="form__group_field" size="4">
+                        </div>
+                        <div class="form__group">
+                            <div class="form__group_label">
+                                Silver miner:
+                            </div>
+                            <input type="text" placeholder="Silver counts" name="silver" pattern="[0-9]+"
+                                   class="form__group_field" size="4">
+                        </div>
+                        <div class="form__group">
+                            <div class="form__group_label">
+                                Common miner:
+                            </div>
+                            <input type="text" placeholder="Common counts" name="common" pattern="[0-9]+"
+                                   class="form__group_field" size="4">
+                        </div>
+                    </div>
+                    <div class="calculator__form_title">
+                        Attackers
+                    </div>
+                    <div class="calculator__form_block">
+                        <div class="form__group">
+                            <div class="form__group_label">
+                                Gold attacker:
+                            </div>
+                            <input type="text" placeholder="Gold counts" name="golda" pattern="[0-9]+"
+                                   class="form__group_field" size="4">
+                        </div>
+                        <div class="form__group">
+                            <div class="form__group_label">
+                                Silver attacker:
+                            </div>
+                            <input type="text" placeholder="Silver counts" name="silvera" pattern="[0-9]+"
+                                   class="form__group_field" size="4">
+                        </div>
+                        <div class="form__group">
+                            <div class="form__group_label">
+                                Common attacker:
+                            </div>
+                            <input type="text" placeholder="Common counts" name="commona" pattern="[0-9]+"
+                                   class="form__group_field" size="4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__result calculator">
+                <div class="calculator__result_action">
+                    <div class="calculator__result_action_btn active" data-date-range="month">
+                        Month (30days)
+                    </div>
+                    <div class="calculator__result_action_btn" data-date-range="day">
+                        Day
+                    </div>
+                    <div class="calculator__result_action_btn" data-date-range="hour">
+                        Hour
+                    </div>
+                </div>
+                <div class="calculator__result_wrapper full">
+                    <div class="calculator__result_title">
+                        Income
+                    </div>
+                    <div class="calculator__result_block" id="income">
+                        <p class="calculator__result_item"><span style="font-weight: bold;">Cube</span> income:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">WAX</span> income:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">USD</span> income:
+                            <span>0</span></p>
+                    </div>
+                </div>
+                <div class="calculator__result_wrapper">
+                    <div class="calculator__result_title">
+                        Expense All
+                    </div>
+                    <div class="calculator__result_block" id="expense_all">
+                        <p class="calculator__result_item"><span style="font-weight: bold;">Cube</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">Krypton</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">WAX</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">USD</span> cost:
+                            <span>0</span></p>
+                    </div>
+                </div>
+                <div class="calculator__result_wrapper">
+                    <div class="calculator__result_title">
+                        Expense Miners
+                    </div>
+                    <div class="calculator__result_block" id="expense_miner">
+                        <p class="calculator__result_item"><span style="font-weight: bold;">Cube</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">Krypton</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">WAX</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">USD</span> cost:
+                            <span>0</span></p>
+                    </div>
+                </div>
+                <div class="calculator__result_wrapper">
+                    <div class="calculator__result_title">
+                        Expense Attaker
+                    </div>
+                    <div class="calculator__result_block" id="expense_attaker">
+                        <p class="calculator__result_item"><span style="font-weight: bold;">Cube</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">Krypton</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">WAX</span> cost:
+                            <span>0</span></p>
+                        <p class="calculator__result_item"><span style="font-weight: bold;">USD</span> cost:
+                            <span>0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="formWrapper">
+        <div class="formWrapper__title">
+            Check stamina remaining:
+        </div>
+        <div class="calculator">
+            <div class="calculator__form stamina">
+                <div class="form">
+                    <div class="form__group">
+                        <div class="form__group_label">
+                            Asset ID:
+                        </div>
+                        <input type="text" placeholder="Enter asset id" name="asset_id" pattern="[0-9]+"
+                               class="form__group_field" size="4">
+                    </div>
+                    <button class="form__submit">Send</button>
+                </div>
+            </div>
+            <div class="calculator__result stamina">
+                <div class="calculator__result_wrapper">
+                    <div class="calculator__result_title">
+                        Check stamina
+                    </div>
+                    <div class="calculator__result_block" id="staminaInfo">
+                        <p class="calculator__result_item">Stamina info: <span>0/0</span></p>
+                        <p class="calculator__result_item">HP info: <span>0/0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="formWrapper">
+        <div class="formWrapper__title">
+            Check user statistic
+        </div>
+        <div class="calculator">
+            <div class="calculator__form userStatistic">
+                <div class="form">
+                    <div class="form__group">
+                        <div class="form__group_label">
+                            Wallet address:
+                        </div>
+                        <input type="text" placeholder="Enter wax wallet" name="playermission" pattern="[0-9]+"
+                               class="form__group_field" size="4">
+                    </div>
+                    <button class="form__submit">Send</button>
+                </div>
+            </div>
+            <div class="calculator__result userStatistic">
+                <div class="calculator__result_wrapper">
+                    <div class="calculator__result_title">
+                        User information
+                    </div>
+                    <div class="calculator__result_block" id="user_info">
+                        <p class="calculator__result_item">Wallet address: <span>N/A</span></p>
+                        <p class="calculator__result_item">User race: <span>N/A</span></p>
+                        <p class="calculator__result_item">Mining power, Cube: <span>0</span></p>
+                        <p class="calculator__result_item">Attack power: <span>0</span></p>
+                        <p class="calculator__result_item">Mission score: <span>0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="formWrapper">
+        <div class="formWrapper__title">
+            Faction Rating
+        </div>
+        <div class="faction__table">
+            <div class="faction__table_block" id="titan">
+
+            </div>
+            <div class="faction__table_block" id="chaos">
+
+            </div>
+            <div class="faction__table_block" id="asteria">
+
+            </div>
+        </div>
+    </div>
+</main>
+<div class="loader">
+    <img src="./image/loader.svg" alt="loader">
+    <div class="loader__text"></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./js/main.min.js"></script>
+</body>
+</html>
