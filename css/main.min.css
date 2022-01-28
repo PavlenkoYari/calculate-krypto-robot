@@ -247,7 +247,8 @@ input {
       .calculator__result_item span {
         font-weight: bold; }
     .calculator__result_wrapper {
-      width: 32%; }
+      width: 32%;
+      margin-bottom: 50px; }
       .calculator__result_wrapper.full {
         width: 100%;
         margin-bottom: 50px; }
